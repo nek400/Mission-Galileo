@@ -48,4 +48,4 @@ the following table contains the initial conditions for the solar system, the un
 ## Results
 The results given by "view3D.py" using the data in "output.dat" is a Gif animation of the Galileo path of launch.
 
-
+![Example](00000000-view3D.png)
