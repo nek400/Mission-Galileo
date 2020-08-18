@@ -83,12 +83,6 @@ ro de procesos */
   population = new_Population("Earth-Moon",N); // efemeride 1989-10-18
   
   
-  /*
-  add_element_to_population(&population, new_Element(5.97219e24,0, 0, 0, 0, 0, 0)); //Earth as center
-  
-  add_element_to_population(&population, new_Element( 7.349e22, (-1.607012772186297e-3)*(au),  (1.889481885884207e-3)*(au),  (1.505067984764226e-4)*(au), (-4.441373820756126e-4)*(au), (-4.204689683825390e-4)*(au),  (3.769551420565769e-5)*(au) ));
-  */
-  
   
 add_element_to_population(&population, new_Element(1.989e30, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));  // sun
   
@@ -113,21 +107,6 @@ add_element_to_population(&population, new_Element( 2223, (8.908428789496743e-1)
 
   
   
-  
-  
-  /*
-  add_element_to_population(&population,new_Element(0.5e20, ((-7.145797222659181e-4)*(au)) , ((6.386604312264796e-5)*(au)) ,((3.221609690741755e-4)*(au)) ,((-8.885052733751100e-4)*(au)),((-4.155282710926470e-3)*(au)),((-1.152039370631404e-3)*(au)) )); //proteus
-  
-  add_element_to_population(&population,new_Element(3.7e18,(-6.566279645817739e-5)*(au),(-3.928878742179119e-4)*(au),(-1.134909268694775e-4)*(au),(5.577594755468575e-3)*(au),(-2.445883633536525e-4)*(au),(-2.377396575170503e-3)*(au))); // galatea
-  
-  add_element_to_population(&population,new_Element(0.05e20,(-3.011416820451796e-4)*(au),(3.114217986713941e-4)*(au),(2.336058165203136e-4)*(au),(-3.924067413749880e-3)*(au),(-3.939094144862570e-3)*(au),(1.867271701436211e4)*(au))); //larissa
-  
-  add_element_to_population(&population,new_Element(0.021e20,(1.827481527765589e-4)*(au),(-2.507515784223542e-4)*(au),(-1.642897835765280e-4)*(au),(5.105610349380976e-3)*(au),(4.124547546870767e-3)*(au),(-6.196004128626816e-4)*(au))); //Despina
-  
-  //add_element_to_population(&population, new_Element(1.989e30, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));  // sol en el centro del sistema
-  //add_element_to_population(&population, new_Element(1.898e27, 4.58*au, -2.008*au, -0.094*au, 0.00293*(au), 0.00727*(au), -9.57e-5*(au)));  // jupiter
-  */
-
 
   //Initial Conditions
   if (miproc==0){
@@ -137,11 +116,6 @@ add_element_to_population(&population, new_Element( 2223, (8.908428789496743e-1)
   }
   
   
-  
-  /*  for(i=0; i<N; i++){
-    add_element_to_population(&population, new_Element(1.0, (double)i, 0.0,0.0, 0.0, 0.0, 0.0));
-  }
-  */
 
   k=0;
   //for(i=0;i<population.n_elements-1;i++){
@@ -157,7 +131,7 @@ add_element_to_population(&population, new_Element( 2223, (8.908428789496743e-1)
 
   data = malloc(sizeof(Element)*(end-begin));
 
-  //buffer is used for the slaves as the list of updated elements
+
   if (miproc > 0){
     buffer = malloc(sizeof(Element)*(population.n_elements));
   }
